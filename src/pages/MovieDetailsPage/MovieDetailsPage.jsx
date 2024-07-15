@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Link, Route, Routes, useLocation } from "react-router-dom";
-import { getMovieDetails } from "../api";
-import MovieCast from "../components/MovieCast/MovieCast";
-import MovieReviews from "../components/MovieReviews/MovieReviews";
+import { getMovieDetails } from "../../api";
+import MovieCast from "../../components/MovieCast/MovieCast";
+import MovieReviews from "../../components/MovieReviews/MovieReviews";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -22,7 +22,7 @@ const MovieDetailsPage = () => {
     };
 
     fetchMovieDetails();
-  }, [movieId, location.state]);
+  }, [movieId]);
 
   if (!movie) return <div>Loading...</div>;
 
